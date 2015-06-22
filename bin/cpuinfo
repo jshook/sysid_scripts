@@ -1,0 +1,6 @@
+#!/bin/bash
+printf "# __/proc/cpuinfo__\n"
+cat /proc/cpuinfo
+
+printf "#__uptime__\n"
+uptime

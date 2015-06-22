@@ -1,0 +1,5 @@
+#!/bin/bash
+printf "# __numactl hardware__\n"
+sudo numactl --hardware
+printf "# __numactl current policy__\n"
+sudo numactl --show

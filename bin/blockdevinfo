@@ -1,0 +1,12 @@
+#!/bin/bash
+printf "# __proc_scsi_scsi__\n"
+sudo cat /proc/scsi/scsi
+
+printf "# __blockdev__\n"
+sudo blockdev --report
+
+printf "# __parted__\n"
+sudo parted -s -l
+
+printf "# __/proc/mdstat__\n"
+cat /proc/mdstat

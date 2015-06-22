@@ -1,0 +1,9 @@
+#!/bin/bash
+printf "# __free__\n"
+free
+
+printf "# __swap summary__\n"
+swapon -s
+
+printf "# __/proc/meminfo__\n"
+cat /proc/meminfo
