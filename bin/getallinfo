@@ -1,0 +1,20 @@
+#!/bin/bash
+datestamp=$(date +%s)
+outputdir="/var/tmp/gather_$datestamp/"
+mkdir -p ${outputdir}
+
+for script in \
+ blockdevinfo \
+ cpuinfo \
+ dmiinfo \
+ filesysinfo \
+ lvminfo \
+ meminfo \
+ netinfo \
+ numainfo
+do
+ printf "gathering with %s\n" "$script"
+ ./$script > "$outputdir/$script.stdout" 2>"$outputdir/$script.stderr"
+done
+
+
