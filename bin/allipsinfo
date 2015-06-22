@@ -1,0 +1,2 @@
+printf " __all-ip-addresses__\n"
+hostname --all-ip-addresses

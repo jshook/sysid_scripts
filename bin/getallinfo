@@ -1,6 +1,15 @@
 #!/bin/bash
+if [ ! -f 'getallinfo' ]
+then
+ printf "You must run this from the bin directory for now.\n";
+ exit 2;
+fi
+
 datestamp=$(date +%s)
-outputdir="/var/tmp/gather_$datestamp/"
+basetmp="/var/tmp"
+resultdir="gather_$datestamp"
+outputdir="$basetmp/$resultdir"
+
 mkdir -p ${outputdir}
 
 for script in \
@@ -11,10 +20,18 @@ for script in \
  lvminfo \
  meminfo \
  netinfo \
- numainfo
+ numainfo \
+ allipsinfo
 do
  printf "gathering with %s\n" "$script"
  ./$script > "$outputdir/$script.stdout" 2>"$outputdir/$script.stderr"
 done
+
+printf "output is stored in %s\n" "$outputdir"
+
+( cd $basetmp ; zip -u $resultdir.zip $resultdir/* )
+
+printf "zip file of $resultdir is at $basetmp/$resultdir.zip\n"
+
 
 
