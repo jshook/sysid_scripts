@@ -22,6 +22,6 @@ do
 done
 
 if [ -n "${needpkgs}" ]
-then rpm -y install $needpkgs
+then yum -y install $needpkgs
 fi
 
