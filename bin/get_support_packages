@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# add necessary utilities to use sysid_scripts on a yum system
+
+needpkgs=""
+
+for cmdspec in \
+ zip:zip \
+ netstat:net-tools \
+ blockdev:util-linux \
+ dmidecode:dmidecode \
+ numctl:numactl \
+ grep:grep
+do
+ cmd=${cmdspec%%:*}
+ pkg=${cmdspec##*:}
+ printf "cmd:$cmd pkg:$pkg\n"
+ if ! $(which $cmd)
+ then
+  needpkgs="$needpkgs $pkg"
+ fi
+done
+
+if [ -n ${needpkgs} ]
+then
+rpm -y install $needpkgs
+fi
+
