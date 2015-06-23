@@ -15,14 +15,13 @@ do
  cmd=${cmdspec%%:*}
  pkg=${cmdspec##*:}
  printf "cmd:$cmd pkg:$pkg\n"
- if ! $(which $cmd)
+ if ! which $cmd
  then
   needpkgs="$needpkgs $pkg"
  fi
 done
 
 if [ -n ${needpkgs} ]
-then
-rpm -y install $needpkgs
+then rpm -y install $needpkgs
 fi
 
