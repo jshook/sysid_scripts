@@ -1,16 +1,22 @@
 #!/bin/bash
 
 printf "#--# rpm -qa\n"
-rpm -qa
+if which rpm
+then rpm -qa
+fi
 
 printf "#--# dpkg -L\n"
-dpkg -L
+if which dpkg
+then dpkg -L
+fi
 
 printf "#--# pacman -Ql\n"
-pacman -Ql
+if which pacman
+then pacman -Ql
+fi
 
 printf "#--# find /etc/yum* -exec grep -H '' {} \\;\n"
-find /etc/yum* -exec grep -H '' {} \;
+find /etc/yum* -type f -exec grep -H '' {} \;
 
 printf "#--# find /etc/apt* -exec grep -H '' {} \\;\n"
-find /etc/apt* -exec grep -H '' {} \;
+find /etc/apt* -type f -exec grep -H '' {} \;

@@ -16,7 +16,7 @@ printf "#--# sudo find /sys/kernel/mm -type f -exec grep -H '' {} \\;\n"
 sudo find /sys/kernel/mm -type f -exec grep -H '' {} \;
 
 printf "#--# find /sys/devices/system/cpu/*/cpufreq/scaling_* -exec grep -H '' {} \\;\n"
-find /sys/devices/system/cpu/*/cpufreq/scaling_* -exec grep -H '' {} \;
+find /sys/devices/system/cpu/*/cpufreq/scaling_* -type f -exec grep -H '' {} \;
 
 printf "#--# cat /proc/config\n"
 cat /proc/config
