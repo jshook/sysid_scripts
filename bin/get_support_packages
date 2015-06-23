@@ -21,7 +21,7 @@ do
  fi
 done
 
-if [ -n ${needpkgs} ]
+if [ -n "${needpkgs}" ]
 then rpm -y install $needpkgs
 fi
 
