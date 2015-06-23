@@ -8,7 +8,7 @@ fi
 
 datestamp=$(date +%s)
 basetmp="/var/tmp"
-resultdir="gather_$datestamp"
+resultdir="sysidinfo_$datestamp"
 outputdir="$basetmp/$resultdir"
 export SYSID_OUTPUTDIR=$outputdir
 
