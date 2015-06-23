@@ -1,0 +1,4 @@
+#!/bin/bash
+
+printf "#--# sudo sysctl -a\n"
+sudo sysctl -a

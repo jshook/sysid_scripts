@@ -1,9 +1,10 @@
 #!/bin/bash
-printf "# __fstab__\n"
-sudo cat /etc/fstab
 
-printf "# __df__\n"
+printf "#--# cat fstab\n"
+cat /etc/fstab
+
+printf "#--# sudo df -k\n"
 sudo df -k
 
-printf "# __/proc/mounts__ \n"
+printf "#--# cat /proc/mounts\n"
 cat /proc/mounts

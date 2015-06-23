@@ -1,0 +1,10 @@
+#!/bin/bash
+
+printf "#--# sudo find /proc/sys -type f -exec grep -H '' {} \\;\n"
+sudo find /proc/sys -type f -exec grep -H '' {} \;
+
+if [ -n "$SYSID_OUTPUTDIR" ]
+then
+ printf "#--# COPYING /proc/sys to $SYSID_OUTPUTDIR/proc_sys\n"
+ cp -pR /proc/sys $SYSID_OUTPUTDIR/proc_sys
+fi

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ ! -f 'getallinfo' ]
 then
  printf "You must run this from the bin directory for now.\n";
@@ -9,10 +10,14 @@ datestamp=$(date +%s)
 basetmp="/var/tmp"
 resultdir="gather_$datestamp"
 outputdir="$basetmp/$resultdir"
+export SYSID_OUTPUTDIR=$outputdir
 
 mkdir -p ${outputdir}
 
 for script in \
+ kerninfo \
+ dmesginfo \
+ systeminfo \
  blockdevinfo \
  cpuinfo \
  dmiinfo \
@@ -21,7 +26,11 @@ for script in \
  meminfo \
  netinfo \
  numainfo \
- allipsinfo
+ allipsinfo \
+ procsysinfo \
+ sysctlinfo \
+ ulimitinfo \
+ pkginfo
 do
  printf "gathering with %s\n" "$script"
  ./$script > "$outputdir/$script.stdout" 2>"$outputdir/$script.stderr"
@@ -29,7 +38,7 @@ done
 
 printf "output is stored in %s\n" "$outputdir"
 
-( cd $basetmp ; zip -u $resultdir.zip $resultdir/* )
+( cd $basetmp ; zip -r $resultdir.zip $resultdir/* )
 
 printf "zip file of $resultdir is at $basetmp/$resultdir.zip\n"
 

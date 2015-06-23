@@ -1,12 +1,17 @@
 #!/bin/bash
-printf "# __proc_scsi_scsi__\n"
-sudo cat /proc/scsi/scsi
 
-printf "# __blockdev__\n"
+printf "#--# cat /proc/scsi/scsi\n"
+cat /proc/scsi/scsi
+
+printf "#--# cmd sudo blockdev --report\n"
 sudo blockdev --report
 
-printf "# __parted__\n"
+printf "#--# cmd sudo parted -s -l\n"
 sudo parted -s -l
 
-printf "# __/proc/mdstat__\n"
+printf "#--# cat /proc/mdstat\n"
 cat /proc/mdstat
+
+printf "#--# sudo find /dev/disk -ls\n"
+sudo find /dev/disk -ls
+

@@ -1,9 +1,4 @@
 #!/bin/bash
-printf "# __free__\n"
-free
 
-printf "# __swap summary__\n"
-swapon -s
-
-printf "# __/proc/meminfo__\n"
+printf "#--# cat /proc/meminfo\n"
 cat /proc/meminfo

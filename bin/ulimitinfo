@@ -1,0 +1,11 @@
+#!/bin/bash
+
+printf "#--# ulimit -a\n"
+ulimit -a
+
+printf "#--# find /etc/security/limits.d -exec grep -H '' {} \\;\n"
+find /etc/security/limits.d -exec grep -H '' {} \;
+
+printf "#--# find /etc/security/limits.conf -exec grep -H '' {} \\;\n"
+find /etc/security/limits.conf -exec grep -H '' {} \;
+

@@ -1,9 +1,10 @@
 #!/bin/bash
-printf "# __lvdisplay__\n"
+
+printf "#--# sudo lvdisplay -v\n"
 sudo lvdisplay -v
 
-printf "# __vgdisplay\n"
+printf "#--# sudo vgdisplay -v\n"
 sudo vgdisplay -v
 
-printf "# __pvdisplay__\n"
+printf "#--# sudo pvdisplay -v\n"
 sudo pvdisplay -v

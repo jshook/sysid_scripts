@@ -1,2 +1,4 @@
-printf " __all-ip-addresses__\n"
+#!/bin/bash
+
+printf "#--# hostname --all-ip-addresses\n"
 hostname --all-ip-addresses

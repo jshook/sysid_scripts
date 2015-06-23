@@ -1,12 +1,16 @@
 #!/bin/bash
-printf "# __ifconfig__\n"
+
+printf "#--# sudo ifconfig -a\n"
 sudo ifconfig -a
 
-printf "# __netstat sockets__\n"
+printf "#--# netstat -rn\n"
+netstat -rn
+
+printf "#--# netstat -ni\n"
 netstat -ni
 
-printf "# __netstat TCP listeners__\n"
-netstat -ntl
+printf "#--# netstat -ntlp\n"
+netstat -ntlp
 
-printf "# __netstat UDP listeners__\n"
+printf "#--# netstat -nul\n"
 netstat -nul

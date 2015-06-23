@@ -1,0 +1,16 @@
+#!/bin/bash
+
+printf "#--# rpm -qa\n"
+rpm -qa
+
+printf "#--# dpkg -L\n"
+dpkg -L
+
+printf "#--# pacman -Ql\n"
+pacman -Ql
+
+printf "#--# find /etc/yum* -exec grep -H '' {} \\;\n"
+find /etc/yum* -exec grep -H '' {} \;
+
+printf "#--# find /etc/apt* -exec grep -H '' {} \\;\n"
+find /etc/apt* -exec grep -H '' {} \;

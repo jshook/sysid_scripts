@@ -1,3 +1,4 @@
 #!/bin/bash
-printf "# __dmidecode__\n"
+
+printf "#--# sudo dmidecode\n"
 sudo dmidecode

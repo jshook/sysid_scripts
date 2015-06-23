@@ -1,0 +1,4 @@
+#!/bin/bash
+
+printf "#--# sudo lspci -v -v\n"
+sudo lspci -v -v

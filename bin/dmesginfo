@@ -1,0 +1,4 @@
+#!/bin/bash
+
+printf "#--# sudo dmesg\n"
+sudo dmesg

@@ -1,6 +1,12 @@
 #!/bin/bash
-printf "# __/proc/cpuinfo__\n"
+
+printf "#--# uptime\n"
+uptime
+
+printf "#--# cat /proc/cpuinfo\n"
 cat /proc/cpuinfo
 
-printf "#__uptime__\n"
-uptime
+printf "#--# cat /proc/interrupts\n"
+cat /proc/interrupts
+
+

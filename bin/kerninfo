@@ -1,0 +1,25 @@
+#!/bin/bash
+
+printf "#--# cat /proc/cmdline\n"
+cat /proc/cmdline
+
+printf "#--# uname -a\n"
+uname -a
+
+printf "#--# cat /etc/*release\n"
+cat /etc/*release
+
+printf "#--# sudo lsmod\n"
+sudo lsmod
+
+printf "#--# sudo find /sys/kernel/mm -type f -exec grep -H '' {} \\;\n"
+sudo find /sys/kernel/mm -type f -exec grep -H '' {} \;
+
+printf "#--# find /sys/devices/system/cpu/*/cpufreq/scaling_* -exec grep -H '' {} \\;\n"
+find /sys/devices/system/cpu/*/cpufreq/scaling_* -exec grep -H '' {} \;
+
+printf "#--# cat /proc/config\n"
+cat /proc/config
+
+printf "#--# zcat /proc/config.gz\n"
+zcat /proc/config
