@@ -6,6 +6,7 @@ needpkgs=""
 
 for cmdspec in \
  zip:zip \
+ unzip:unzip \
  netstat:net-tools \
  blockdev:util-linux \
  dmidecode:dmidecode \
