@@ -11,6 +11,7 @@ for cmdspec in \
  blockdev:util-linux \
  dmidecode:dmidecode \
  numctl:numactl \
+ lspci:pciutils \
  grep:grep
 do
  cmd=${cmdspec%%:*}
